@@ -28,6 +28,10 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
       - name: Setup pages
         uses: actions/configure-pages@v5
+      - name: Install createrepo_c
+        run: sudo apt update && sudo apt install -y createrepo-c
+      - name: Regenerate metadata
+        run: createrepo_c --update .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
