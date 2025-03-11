@@ -24,12 +24,22 @@
 				text-decoration: none;
 				color: #1d84b5;
 			}
+
+			.inline-code {
+				display: inline;
+				border: 1px solid #37293A;
+				border-radius: 0.25rem;
+				background-color: #37293A;
+				color: #e8eef2;
+				padding-left: 0.25rem;
+				padding-right: 0.25rem;
+			}
 		</style>
 	</head>
 	<body>
 		<h1>Welcome to the UntitledDesktopEnvironment RPM repository</h1>
-		<p>This repository is used for hosting all UntitledDesktopEnvironment packages, as well as all <a href="https://madladsquad.com">MadLadSquad</a> applications</p>
-		<p>To use this repository use the following configuration:</p>
+		<p>This repository is used for hosting all UntitledDesktopEnvironment packages, as well as all <a href="https://madladsquad.com">MadLadSquad</a> applications.</p>
+		<p>To use this repository use the following configuration to <code class="inline-code">/etc/yum.repos.d/ude-rpms.repo</code> :</p>
 		<pre class="sourceCode toml"><code class="sourceCode toml">[ude-rpms]
 name=UntitledDesktopRPM
 baseurl=https://rpms.madladsquad.com/
