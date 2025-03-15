@@ -30,7 +30,6 @@ jobs:
           createrepo_c --update .
           for spec in SPECS/*.spec; do
             spectool -g -R "${spec}"
-            dnf builddep -y "$spec"
           done
       - name: Installing UntitledCLIParser
         run: |
