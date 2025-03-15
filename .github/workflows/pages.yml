@@ -16,6 +16,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    container: fedora:rawhide
     steps:
       - name: Checkout
         uses: actions/checkout@v4
