@@ -58,7 +58,8 @@ jobs:
       - name: Installing UntitledImGuiFramework
         run: | 
           for dir in RPMS/x86_64/*.rpm; do
-            if [[ $(echo $dir | grep -v debug) == "" ]]; then
+            if [[ "$(echo $dir | grep -v debug)" == "" ]]; then
+              echo "${dir}"
               rpm -i "${dir}" || exit
             fi
           done
