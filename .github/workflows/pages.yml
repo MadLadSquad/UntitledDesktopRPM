@@ -35,42 +35,52 @@ jobs:
         run: |
           dnf builddep -y SPECS/UntitledCLIParser.spec
           rpmbuild -ba SPECS/UntitledCLIParser.spec
+          rpm -i $(ls RPMS/x86_64/untitled-cli-parser-* | grep -v "debug")
       - name: Installing UntitledDBusUtils
         run: | 
           dnf builddep -y SPECS/UntitledDBusUtils.spec
           rpmbuild -ba SPECS/UntitledDBusUtils.spec
+          rpm -i $(ls RPMS/x86_64/untitled-dbus-utils-* | grep -v "debug")
       - name: Installing UntitledExec
         run: | 
           dnf builddep -y SPECS/UntitledExec.spec
           rpmbuild -ba SPECS/UntitledExec.spec
+          rpm -i $(ls RPMS/x86_64/untitled-exec-* | grep -v "debug")
       - name: Installing UntitledI18N
         run: | 
           dnf builddep -y SPECS/UntitledI18N.spec
           rpmbuild -ba SPECS/UntitledI18N.spec
+          rpm -i $(ls RPMS/x86_64/untitled-i18n-* | grep -v "debug")
       - name: Installing UntitledOpen
         run: | 
           dnf builddep -y SPECS/UntitledOpen.spec
           rpmbuild -ba SPECS/UntitledOpen.spec
+          rpm -i $(ls RPMS/x86_64/untitled-open-* | grep -v "debug")
       - name: Installing UntitledXDGBasedir
         run: | 
           dnf builddep -y SPECS/UntitledXDGBasedir.spec
           rpmbuild -ba SPECS/UntitledXDGBasedir.spec
+          rpm -i $(ls RPMS/x86_64/untitled-xdg-basedir-* | grep -v "debug")
       - name: Installing UntitledImGuiFramework
         run: | 
           dnf builddep -y SPECS/UntitledImGuiFramework.spec
           rpmbuild -ba SPECS/UntitledImGuiFramework.spec
+          rpm -i $(ls RPMS/x86_64/untitled-imgui-framework-* | grep -v "debug")
       - name: Installing UntitledDESessionLogout
         run: | 
           dnf builddep -y SPECS/UntitledDESessionLogout.spec
           rpmbuild -ba SPECS/UntitledDESessionLogout.spec
+          rpm -i $(ls RPMS/x86_64/ude-session-logout-* | grep -v "debug")
       - name: Installing UntitledGameSystemManager
         run: | 
           dnf builddep -y SPECS/UntitledGameSystemManager.spec
           rpmbuild -ba SPECS/UntitledGameSystemManager.spec
+          rpm -i $(ls RPMS/x86_64/untitled-game-system-manager-* | grep -v "debug")
       - name: Installing UntitledIBusHandwriting
         run: | 
           dnf builddep -y SPECS/UntitledIBusHandwriting.spec
           rpmbuild -ba SPECS/UntitledIBusHandwriting.spec
+          rpm -i $(ls RPMS/x86_64/untitled-ibus-handwriting-* | grep -v "debug")
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
