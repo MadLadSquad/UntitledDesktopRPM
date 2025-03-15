@@ -24,16 +24,24 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install createrepo_c
         run: |
-          pwd
           dnf install -y rpmdevtools createrepo_c curl
-        # rpmdev-setuptree
-        #  createrepo_c
-        #  for spec in SPECS/*.spec; do
-        #    spectool -g -R "${spec}"
-        #    rpmbuild 
-        #  done
-      - name: Regenerate metadata
-        run: createrepo_c --update .
+          ln -s . ~/rpmbuild
+          rpmdev-setuptree
+          createrepo_c --update .
+          for spec in SPECS/*.spec; do
+            dnf install builddep -y "$spec"
+            spectool -g -R "${spec}"
+          done
+      - run: rpmbuild -ba SPECS/UntitledCLIParser.spec
+      - run: rpmbuild -ba SPECS/UntitledDBusUtils.spec
+      - run: rpmbuild -ba SPECS/UntitledExec.spec
+      - run: rpmbuild -ba SPECS/UntitledI18N.spec
+      - run: rpmbuild -ba SPECS/UntitledOpen.spec
+      - run: rpmbuild -ba SPECS/UnttildeXDGBasedir.spec
+      - run: rpmbuild -ba SPECS/UntitledImGuiFramework.spec
+      - run: rpmbuild -ba SPECS/UntitledDESessionLogout.spec
+      - run: rpmbuild -ba SPECS/UntitledGameSystemManager.spec
+      - run: rpmbuild -ba SPECS/UntitledIBusHandwriting.spec
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
