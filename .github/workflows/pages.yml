@@ -57,7 +57,7 @@ jobs:
           rpmbuild -ba SPECS/UntitledXDGBasedir.spec
       - name: Installing UntitledImGuiFramework
         run: | 
-          for ${dir} in RPMS/x86_64/*.rpm; do
+          for {dir in RPMS/x86_64/*.rpm; do
             if [[ $(grep -v "") == "" ]]; then
               rpm -i "${dir}" || exit
             fi
