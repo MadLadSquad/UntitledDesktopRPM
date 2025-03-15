@@ -29,7 +29,7 @@ jobs:
           rpmdev-setuptree
           createrepo_c --update .
           for spec in SPECS/*.spec; do
-            dnf install builddep -y "$spec"
+            dnf builddep -y "$spec"
             spectool -g -R "${spec}"
           done
       - run: rpmbuild -ba SPECS/UntitledCLIParser.spec
