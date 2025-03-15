@@ -7,7 +7,8 @@ Summary:	Next generation C/C++ i18n library
 License:	MIT
 URL:		https://github.com/MadLadSquad/%{real_name}
 Source0:	%url/releases/download/v%version/%name-%version.tar.xz
-BuildRequires:  cmake, gcc-c++, make, pkgconf
+BuildRequires:  cmake, gcc-c++, make, pkgconf, yaml-cpp, yaml-cpp-devel
+Requires:      yaml-cpp
 
 %description
 Next generation C/C++ i18n library
