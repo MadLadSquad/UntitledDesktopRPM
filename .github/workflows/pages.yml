@@ -29,19 +29,49 @@ jobs:
           rpmdev-setuptree
           createrepo_c --update .
           for spec in SPECS/*.spec; do
-            dnf builddep -y "$spec"
             spectool -g -R "${spec}"
+            dnf builddep -y "$spec"
           done
-      - run: rpmbuild -ba SPECS/UntitledCLIParser.spec
-      - run: rpmbuild -ba SPECS/UntitledDBusUtils.spec
-      - run: rpmbuild -ba SPECS/UntitledExec.spec
-      - run: rpmbuild -ba SPECS/UntitledI18N.spec
-      - run: rpmbuild -ba SPECS/UntitledOpen.spec
-      - run: rpmbuild -ba SPECS/UnttildeXDGBasedir.spec
-      - run: rpmbuild -ba SPECS/UntitledImGuiFramework.spec
-      - run: rpmbuild -ba SPECS/UntitledDESessionLogout.spec
-      - run: rpmbuild -ba SPECS/UntitledGameSystemManager.spec
-      - run: rpmbuild -ba SPECS/UntitledIBusHandwriting.spec
+      - name: Installing UntitledCLIParser
+        run: |
+          dnf builddep -y SPECS/UntitledCLIParser.spec
+          rpmbuild -ba SPECS/UntitledCLIParser.spec
+      - name: Installing UntitledDBusUtils
+        run: | 
+          dnf builddep -y SPECS/UntitledDBusUtils.spec
+          rpmbuild -ba SPECS/UntitledDBusUtils.spec
+      - name: Installing UntitledExec
+        run: | 
+          dnf builddep -y SPECS/UntitledExec.spec
+          rpmbuild -ba SPECS/UntitledExec.spec
+      - name: Installing UntitledI18N
+        run: | 
+          dnf builddep -y SPECS/UntitledI18N.spec
+          rpmbuild -ba SPECS/UntitledI18N.spec
+      - name: Installing UntitledOpen
+        run: | 
+          dnf builddep -y SPECS/UntitledOpen.spec
+          rpmbuild -ba SPECS/UntitledOpen.spec
+      - name: Installing UntitledXDGBasedir
+        run: | 
+          dnf builddep -y SPECS/UntitledXDGBasedir.spec
+          rpmbuild -ba SPECS/UntitledXDGBasedir.spec
+      - name: Installing UntitledImGuiFramework
+        run: | 
+          dnf builddep -y SPECS/UntitledImGuiFramework.spec
+          rpmbuild -ba SPECS/UntitledImGuiFramework.spec
+      - name: Installing UntitledDESessionLogout
+        run: | 
+          dnf builddep -y SPECS/UntitledDESessionLogout.spec
+          rpmbuild -ba SPECS/UntitledDESessionLogout.spec
+      - name: Installing UntitledGameSystemManager
+        run: | 
+          dnf builddep -y SPECS/UntitledGameSystemManager.spec
+          rpmbuild -ba SPECS/UntitledGameSystemManager.spec
+      - name: Installing UntitledIBusHandwriting
+        run: | 
+          dnf builddep -y SPECS/UntitledIBusHandwriting.spec
+          rpmbuild -ba SPECS/UntitledIBusHandwriting.spec
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
