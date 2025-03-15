@@ -34,7 +34,8 @@ jobs:
       - name: Installing UntitledCLIParser
         run: |
           dnf builddep -y SPECS/UntitledCLIParser.spec
-          rpmbuild -ba SPECS/UntitledCLIParser.spec
+          rpmbuild -bb SPECS/UntitledCLIParser.spec
+          dnf install $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-cli-parser-*.rpm" | sort | tail -n 1)
       - name: Installing UntitledDBusUtils
         run: | 
           dnf builddep -y SPECS/UntitledDBusUtils.spec
