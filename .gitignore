@@ -32,3 +32,6 @@
 *.app
 
 repodata/
+*.tar.*
+*.rpm
+BUILD/*/

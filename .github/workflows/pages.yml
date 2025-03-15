@@ -29,7 +29,15 @@ jobs:
       - name: Setup pages
         uses: actions/configure-pages@v5
       - name: Install createrepo_c
-        run: sudo apt update && sudo apt install -y createrepo-c
+        run: |
+          pwd
+          dnf install -y rpmdevtools createrepo_c curl
+        # rpmdev-setuptree
+        #  createrepo_c
+        #  for spec in SPECS/*.spec; do
+        #    spectool -g -R "${spec}"
+        #    rpmbuild 
+        #  done
       - name: Regenerate metadata
         run: createrepo_c --update .
       - name: Upload artifact
