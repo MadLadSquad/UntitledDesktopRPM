@@ -20,13 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: Checkout submodules
-        shell: bash
-        run: |
-          git submodule sync --recursive
-          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
       - name: Setup pages
         uses: actions/configure-pages@v5
       - name: Install createrepo_c
