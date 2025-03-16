@@ -1,7 +1,7 @@
 %define real_name UntitledImGuiFramework
 
 Name:		untitled-imgui-framework
-Version:	0.9.9.12
+Version:	1.0.0.0
 Release:	1
 Summary:	Cross-platform desktop application development framework
 License:	MIT
