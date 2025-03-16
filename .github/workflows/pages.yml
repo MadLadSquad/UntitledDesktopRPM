@@ -87,6 +87,7 @@ jobs:
           cp -r ~/rpmbuild/BUILD/* BUILD/
           cp -r ~/rpmbuild/SRPMS/* SRPMS/
           cp -r ~/rpmbuild/SOURCES/* SOURCES/
+          createrepo_c --update .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
