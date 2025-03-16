@@ -1,7 +1,7 @@
 %define real_name UntitledIBusHandwriting
 
 Name:		untitled-ibus-handwriting
-Version:	1.3.0.1
+Version:	1.3.0.2
 Release:	1
 Summary:	A handwriting recognition input method plugin for ibus
 License:	MIT
@@ -37,7 +37,7 @@ UVKBuildTool --build "%{buildroot}/usr" %{_prefix} . || exit
 %{_datadir}/ibus/component/%{real_name}.xml
 %{_prefix}/etc/%{real_name}/
 %{_includedir}/%{real_name}/
-%{_datadir}/icons/untitled-ibus-handwrite.png
+%{_datadir}/icons/%{name}.png
 
 %changelog
 * Sat Mar 15 2025 MadLadSquad <contact@madladsquad.com> - 1.0-1
