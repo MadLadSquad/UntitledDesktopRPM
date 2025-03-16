@@ -7,7 +7,7 @@ Summary:	A handwriting recognition input method plugin for ibus
 License:	MIT
 URL:		https://github.com/MadLadSquad/%{real_name}
 Source0:	%url/releases/download/v%version/%name-%version.tar.xz
-BuildRequires:  cmake, gcc-c++, make, pkgconf, untitled-imgui-framework, rust, cargo, ibus
+BuildRequires:  cmake, gcc-c++, make, pkgconf, untitled-imgui-framework, rust, cargo, ibus, ibus-devel
 Requires:	untitled-imgui-framework, ibus
 
 %description
