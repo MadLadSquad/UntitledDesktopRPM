@@ -81,6 +81,12 @@ jobs:
           dnf builddep -y SPECS/UntitledIBusHandwriting.spec
           rpmbuild -ba SPECS/UntitledIBusHandwriting.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-ibus-handwriting-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug" | sort | tail -n 1)
+      - name: Copy RPMs
+        run: |
+          cp -r ~/rpmbuild/RPMS/x86_64 RPMS/
+          cp -r ~/rpmbuild/BUILD/* BUILD/
+          cp -r ~/rpmbuild/SRPMS/* SRPMS/
+          cp -r ~/rpmbuild/SOURCES/* SOURCES/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
