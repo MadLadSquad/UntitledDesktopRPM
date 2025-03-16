@@ -31,11 +31,13 @@ UVKBuildTool --build "%{buildroot}/usr" %{_prefix} . || exit
 
 %files
 %{_libdir}/lib%{real_name}Lib.so
-%{_bindir}/%{real_name}
+%{_libexecdir}/%{real_name}
+%{_libdir}/%{real_name}/libhanzi_lookup.so
 %{_datadir}/config/%{real_name}/
+%{_datadir}/ibus/component/%{real_name}.xml
 %{_prefix}/etc/%{real_name}/
 %{_includedir}/%{real_name}/
-%{_datadir}/icons/%{name}.png
+%{_datadir}/icons/untitled-ibus-handwrite.png
 
 %changelog
 * Sat Mar 15 2025 MadLadSquad <contact@madladsquad.com> - 1.0-1
