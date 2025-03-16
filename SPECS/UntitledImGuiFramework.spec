@@ -1,7 +1,7 @@
 %define real_name UntitledImGuiFramework
 
 Name:		untitled-imgui-framework
-Version:	0.9.9.11
+Version:	0.9.9.12
 Release:	1
 Summary:	Cross-platform desktop application development framework
 License:	MIT
@@ -42,7 +42,6 @@ cmake --install . --prefix="%{buildroot}/usr/" || exit
 %{_datadir}/UVKBuildTool/
 %exclude %{_datadir}/utf8cpp
 %exclude %{_includedir}/utf8cpp
-%exclude %{_prefix}/etc/ebuild
 %exclude %{_datadir}/config/ebuild
 %exclude %{_includedir}/ebuild
 %exclude %{_libdir}/libebuildLib.so

@@ -35,7 +35,6 @@ UVKBuildTool --build "%{buildroot}/usr" %{_prefix} . || exit
 %{_libdir}/%{real_name}/libhanzi_lookup.so
 %{_datadir}/config/%{real_name}/
 %{_datadir}/ibus/component/%{real_name}.xml
-%{_prefix}/etc/%{real_name}/
 %{_includedir}/%{real_name}/
 %{_datadir}/icons/%{name}.png
 

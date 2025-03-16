@@ -29,7 +29,6 @@ UVKBuildTool --build "%{buildroot}/usr" %{_prefix} . || exit
 %{_libdir}/lib%{name}Lib.so
 %{_bindir}/%{name}
 %{_datadir}/config/%{name}/
-%{_prefix}/etc/%{name}/
 %{_includedir}/%{name}/
 %{_datadir}/applications/com.madladsquad.ude-session-logout.desktop
 %{_datadir}/icons/ude-session-logout.png

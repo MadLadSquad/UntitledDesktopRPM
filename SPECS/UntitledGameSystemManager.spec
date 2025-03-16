@@ -34,7 +34,6 @@ UVKBuildTool --build "%{buildroot}/usr" %{_prefix} . || exit
 %{_libdir}/libUGM_Incus_InternalFuncs.so
 %{_bindir}/%{real_name}
 %{_datadir}/config/%{real_name}/
-%{_prefix}/etc/%{real_name}/
 %{_includedir}/%{real_name}/
 %{_datadir}/applications/com.madladsquad.%{real_name}.desktop
 %{_datadir}/icons/%{name}.png
