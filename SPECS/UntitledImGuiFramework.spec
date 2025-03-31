@@ -1,4 +1,5 @@
 %define real_name UntitledImGuiFramework
+%global debug_package %{nil}
 
 Name:		untitled-imgui-framework
 Version:	1.0.0.0
