@@ -1,4 +1,5 @@
 %define real_name UntitledI18N
+%global debug_package %{nil}
 
 Name:		untitled-i18n
 Version:	1.5.0.2
