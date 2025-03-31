@@ -31,6 +31,7 @@ rm -f %{buildroot}/debugsourcefiles.list
 %{_libdir}/lib%{real_name}.so
 %{_libdir}/pkgconfig/%{real_name}.pc
 %{_includedir}/%{real_name}/
+%exclude %{buildroot}/debugsourcefiles.list
 
 %changelog
 * Sat Mar 15 2025 MadLadSquad <contact@madladsquad.com> - 1.0-1
