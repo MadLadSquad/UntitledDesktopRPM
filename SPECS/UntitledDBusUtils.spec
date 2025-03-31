@@ -1,4 +1,5 @@
 %define real_name UntitledDBusUtils
+%global debug_package %{nil}
 
 Name:		untitled-dbus-utils
 Version:	1.4.0.1
