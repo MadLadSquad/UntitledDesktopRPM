@@ -34,52 +34,52 @@ jobs:
       - name: Installing UntitledCLIParser
         run: |
           dnf builddep -y SPECS/UntitledCLIParser.spec
-          rpmbuild -bb SPECS/UntitledCLIParser.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledCLIParser.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-cli-parser-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledDBusUtils
         run: | 
           dnf builddep -y SPECS/UntitledDBusUtils.spec
-          rpmbuild -bb SPECS/UntitledDBusUtils.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledDBusUtils.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-dbus-utils-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledExec
         run: | 
           dnf builddep -y SPECS/UntitledExec.spec
-          rpmbuild -bb SPECS/UntitledExec.spec          
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledExec.spec          
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-exec-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledI18N
         run: | 
           dnf builddep -y SPECS/UntitledI18N.spec
-          rpmbuild -bb SPECS/UntitledI18N.spec          
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledI18N.spec          
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-i18n-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledOpen
         run: | 
           dnf builddep -y SPECS/UntitledOpen.spec
-          rpmbuild -bb SPECS/UntitledOpen.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledOpen.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-open-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledXDGBasedir
         run: | 
           dnf builddep -y SPECS/UntitledXDGBasedir.spec
-          rpmbuild -bb SPECS/UntitledXDGBasedir.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledXDGBasedir.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-xdg-basedir-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledImGuiFramework
         run: | 
           dnf builddep -y SPECS/UntitledImGuiFramework.spec
-          rpmbuild -ba SPECS/UntitledImGuiFramework.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledImGuiFramework.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-imgui-framework-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledDESessionLogout
         run: |
           dnf builddep -y SPECS/UntitledDESessionLogout.spec
-          rpmbuild -bb SPECS/UntitledDESessionLogout.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledDESessionLogout.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "ude-session-logout-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledGameSystemManager
         run: | 
           dnf builddep -y SPECS/UntitledGameSystemManager.spec
-          rpmbuild -ba SPECS/UntitledGameSystemManager.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledGameSystemManager.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-game-system-manager-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug"  | sort | tail -n 1)
       - name: Installing UntitledIBusHandwriting
         run: | 
           dnf builddep -y SPECS/UntitledIBusHandwriting.spec
-          rpmbuild -ba SPECS/UntitledIBusHandwriting.spec
+          rpmbuild -bb --define '_debugsource_package %{nil}' SPECS/UntitledIBusHandwriting.spec
           dnf install -y $(find ~/rpmbuild/RPMS/x86_64/ -name "untitled-ibus-handwriting-*.rpm" ! -name "*-debuginfo.rpm" ! -name "*-debugsource.rpm" | grep -v "debug" | sort | tail -n 1)
       - name: Copy RPMs
         run: |
