@@ -1,4 +1,5 @@
 %define real_name UntitledExec
+%global debug_package %{nil}
 
 Name:		untitled-exec
 Version:	5.0.0.1
