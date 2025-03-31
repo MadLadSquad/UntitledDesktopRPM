@@ -1,4 +1,5 @@
 %define real_name UntitledGameSystemManager
+%global debug_package %{nil}
 
 Name:		untitled-game-system-manager
 Version:	2.7.0.1
