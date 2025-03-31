@@ -1,4 +1,5 @@
 %define real_name UntitledIBusHandwriting
+%global debug_package %{nil}
 
 Name:		untitled-ibus-handwriting
 Version:	1.3.0.2
