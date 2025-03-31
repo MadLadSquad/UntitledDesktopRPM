@@ -1,4 +1,5 @@
 %define real_name UntitledXDGBasedir
+%global debug_package %{nil}
 
 Name:		untitled-xdg-basedir
 Version:	5.0.0.1
