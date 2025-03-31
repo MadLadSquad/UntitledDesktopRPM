@@ -25,6 +25,7 @@ make || exit
 %install
 cd build || exit
 cmake --install . --prefix="%{buildroot}/usr/" || exit
+rm -f %{buildroot}/debugsourcefiles.list
 
 %files
 %{_libdir}/lib%{real_name}.so
