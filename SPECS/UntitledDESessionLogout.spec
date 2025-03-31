@@ -1,4 +1,5 @@
 %define real_name UntitledDESessionLogout
+%global debug_package %{nil}
 
 Name:		ude-session-logout
 Version:	2.1.0.1
