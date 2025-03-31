@@ -1,4 +1,5 @@
 %define real_name UntitledOpen
+%global debug_package %{nil}
 
 Name:		untitled-open
 Version:	2.6.0.2
