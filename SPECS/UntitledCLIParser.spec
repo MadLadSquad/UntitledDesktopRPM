@@ -1,4 +1,5 @@
 %define real_name UntitledCLIParser
+%global debug_package %{nil}
 
 Name:		untitled-cli-parser
 Version:	5.0.0.1
@@ -25,13 +26,11 @@ make || exit
 %install
 cd build || exit
 cmake --install . --prefix="%{buildroot}/usr/" || exit
-rm -f %{buildroot}/debugsourcefiles.list
 
 %files
 %{_libdir}/lib%{real_name}.so
 %{_libdir}/pkgconfig/%{real_name}.pc
 %{_includedir}/%{real_name}/
-%exclude %{buildroot}/debugsourcefiles.list
 
 %changelog
 * Sat Mar 15 2025 MadLadSquad <contact@madladsquad.com> - 1.0-1
