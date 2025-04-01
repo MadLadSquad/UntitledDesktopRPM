@@ -25,7 +25,6 @@ jobs:
       - name: Install createrepo_c
         run: |
           dnf install -y rpmdevtools createrepo_c curl
-          setenforce 0
 
           echo "----------"
           pwd
