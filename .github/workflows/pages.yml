@@ -32,7 +32,7 @@ jobs:
           ls -a
           echo "----------"
           
-          ln -s . ~/rpmbuild
+          ln -s "$(pwd)/" ~/rpmbuild
           rpmdev-setuptree
           createrepo_c --update .
           for spec in SPECS/*.spec; do
