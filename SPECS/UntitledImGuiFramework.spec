@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-imgui-framework
-Version:	1.0.0.0
+Version:	1.1.0.0
 Release:	1
 Summary:	Cross-platform desktop application development framework
 License:	MIT
