@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-dbus-utils
-Version:	1.4.0.1
+Version:	2.0.0.0
 Release:	1
 Summary:	Modern light, type and memory safe C++ wrapper on top of the dbus-1 library
 License:	MIT
