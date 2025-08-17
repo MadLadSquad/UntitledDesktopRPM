@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		ude-session-logout
-Version:	2.1.0.1
+Version:	2.2.0.0
 Release:	1
 Summary:	A log out prompt for the UntitledDesktopEnvironment
 License:	MIT
