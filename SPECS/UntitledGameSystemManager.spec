@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-game-system-manager
-Version:	2.7.0.1
+Version:	2.8.0.0
 Release:	1
 Summary:	A manager for containerised Linux gaming systems based on Incus
 License:	MIT
