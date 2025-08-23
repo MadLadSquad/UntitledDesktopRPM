@@ -10,5 +10,6 @@ RPM packages for the UntitledDesktopEnvironment. You can start using packages fr
 name=UntitledDesktopRPM
 baseurl=https://rpms.madladsquad.com/
 enabled=1
-gpgcheck=0
+gpgcheck=1
+gpgkey=https://rpms.madladsquad.com/rpmkey.pub
 ```
