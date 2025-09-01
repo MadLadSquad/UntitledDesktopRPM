@@ -19,7 +19,7 @@ jobs:
     container: fedora:rawhide
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup pages
         uses: actions/configure-pages@v5
       - name: Install gpg
@@ -62,7 +62,7 @@ jobs:
           createrepo_c --update .
           gpg --detach-sign --armor repodata/repomd.xml
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "."
       - name: Deploy to GitHub Pages
