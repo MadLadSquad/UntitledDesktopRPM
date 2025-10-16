@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-ibus-handwriting
-Version:	1.5.0.0
+Version:	1.5.1.0
 Release:	1
 Summary:	A handwriting recognition input method plugin for ibus
 License:	MIT
