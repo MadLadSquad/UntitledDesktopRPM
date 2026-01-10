@@ -2,14 +2,13 @@
 %global debug_package %{nil}
 
 Name:		untitled-i18n
-Version:	1.5.0.2
+Version:	1.6.0.0
 Release:	1
 Summary:	Next generation C/C++ i18n library
 License:	MIT
 URL:		https://github.com/MadLadSquad/%{real_name}
 Source0:	%url/releases/download/v%version/%name-%version.tar.xz
-BuildRequires:  cmake, gcc-c++, make, pkgconf, yaml-cpp, yaml-cpp-devel
-Requires:      yaml-cpp
+BuildRequires:  cmake, gcc-c++, make, pkgconf
 
 %description
 Next generation C/C++ i18n library

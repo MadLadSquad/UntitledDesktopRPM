@@ -2,14 +2,14 @@
 %global debug_package %{nil}
 
 Name:		untitled-imgui-framework
-Version:	2.1.0.1
+Version:	2.4.0.0
 Release:	1
 Summary:	Cross-platform desktop application development framework
 License:	MIT
 URL:		https://github.com/MadLadSquad/%{real_name}
 Source0:	%url/releases/download/v%version/%name-%version.tar.xz
-BuildRequires:  cmake, gcc-c++, make, pkgconf, yaml-cpp, yaml-cpp-devel, utf8cpp-devel, vulkan-headers, vulkan-validation-layers, vulkan-loader-devel, vulkan-loader, glfw, glfw-devel, freetype, fontconfig, fontconfig-devel, untitled-dbus-utils, untitled-cli-parser, untitled-exec, untitled-i18n, untitled-open, untitled-xdg-basedir, wayland-devel
-Requires:	yaml-cpp, vulkan-loader, glfw, freetype, fontconfig, untitled-dbus-utils, untitled-cli-parser, untitled-exec, untitled-i18n, untitled-open, untitled-xdg-basedir
+BuildRequires:  cmake, gcc-c++, make, pkgconf, utf8cpp-devel, vulkan-headers, vulkan-validation-layers, vulkan-loader-devel, vulkan-loader, glfw, glfw-devel, freetype, fontconfig, fontconfig-devel, untitled-dbus-utils, untitled-cli-parser, untitled-exec, untitled-i18n, untitled-open, untitled-xdg-basedir, wayland-devel
+Requires:	vulkan-loader, glfw, freetype, fontconfig, untitled-dbus-utils, untitled-cli-parser, untitled-exec, untitled-i18n, untitled-open, untitled-xdg-basedir
 
 %description
 A cross-platform desktop application development framework based on the dear imgui library
@@ -39,7 +39,6 @@ cmake --install . --prefix="%{buildroot}/usr/" || exit
 %{_libdir}/pkgconfig/%{real_name}.pc
 %{_includedir}/%{real_name}/
 %{_bindir}/UVKBuildTool
-%{_libdir}/libUVKBuildToolLib.so
 %{_datadir}/UVKBuildTool/
 %exclude %{_datadir}/utf8cpp
 %exclude %{_includedir}/utf8cpp
