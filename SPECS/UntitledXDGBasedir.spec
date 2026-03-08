@@ -28,7 +28,7 @@ cd build || exit
 cmake --install . --prefix="%{buildroot}/usr/" || exit
 
 %files
-%{_libdir}/lib%{real_name}.so
+%{_libdir}/lib%{real_name}.so*
 %{_libdir}/pkgconfig/%{real_name}.pc
 %{_includedir}/%{real_name}/
 
