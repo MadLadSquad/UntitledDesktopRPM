@@ -35,6 +35,9 @@ jobs:
           git_commit_gpgsign: true
       - name: Install createrepo_c
         run: |
+          gpg --export --armor contact@madladsquad.com > my_key
+          rpm --import my_key
+          
           dnf install -y rpmdevtools createrepo_c curl
 
           echo "----------"
