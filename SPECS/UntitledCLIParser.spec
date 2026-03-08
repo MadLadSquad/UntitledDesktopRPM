@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-cli-parser
-Version:	5.0.0.1
+Version:	6.0.0.0
 Release:	1
 Summary:	C/C++ parser for CLI arguments
 License:	MIT
