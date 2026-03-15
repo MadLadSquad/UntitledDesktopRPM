@@ -26,7 +26,7 @@ jobs:
         run: "dnf install -y gpg git rpm-sign"
       - name: "Import GPG key for signing commits"
         id: import-gpg
-        uses: crazy-max/ghaction-import-gpg@v6
+        uses: crazy-max/ghaction-import-gpg@v7
         with:
           gpg_private_key: ${{ secrets.ACTION_COMMIT_SING_PRIVATE_KEY }}
           passphrase: ${{ secrets.ACTION_COMMIT_SING_PASS }}
