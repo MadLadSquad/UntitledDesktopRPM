@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Install gpg
         run: "dnf install -y gpg git rpm-sign"
       - name: "Import GPG key for signing commits"
@@ -70,4 +70,4 @@ jobs:
           path: "."
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
