@@ -8,8 +8,8 @@ Summary:	Cross-platform C/C++ library for opening links and file pickers nativel
 License:	MIT
 URL:		https://github.com/MadLadSquad/%{real_name}
 Source0:	%url/releases/download/v%version/%name-%version.tar.xz
-BuildRequires:  cmake, gcc-c++, make, pkgconf, dbus, dbus-devel, xdg-desktop-portal-devel
-Requires:	dbus, xdg-desktop-portal
+BuildRequires:  cmake, gcc-c++, make, pkgconf, dbus, dbus-devel, xdg-desktop-portal-devel, wayland-devel
+Requires:	dbus, xdg-desktop-portal, libwayland-client
 
 %description
 A cross-platform C/C++ library for opening links and file pickers natively
