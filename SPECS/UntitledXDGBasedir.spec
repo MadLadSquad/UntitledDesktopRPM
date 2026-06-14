@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-xdg-basedir
-Version:	5.0.0.1
+Version:	5.2.0.0
 Release:	1
 Summary:	C/C++ implementation of the XDG basedir specification
 License:	MIT
