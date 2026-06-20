@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-i18n
-Version:	1.6.1.0
+Version:	1.6.2.0
 Release:	1
 Summary:	Next generation C/C++ i18n library
 License:	MIT
