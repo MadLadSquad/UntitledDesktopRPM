@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:		untitled-open
-Version:	2.7.0.0
+Version:	3.0.0.0
 Release:	1
 Summary:	Cross-platform C/C++ library for opening links and file pickers natively
 License:	MIT
