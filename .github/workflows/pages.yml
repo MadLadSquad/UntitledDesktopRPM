@@ -19,7 +19,7 @@ jobs:
     container: fedora:rawhide
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Setup pages
         uses: actions/configure-pages@v6
       - name: Install gpg
