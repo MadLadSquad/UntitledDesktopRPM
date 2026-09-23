@@ -1,27 +1,20 @@
-name: Deploy to pages
+name: Deploy to Cloudflare R2
 on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
-  group: "pages"
+  group: "r2-deploy"
   cancel-in-progress: true
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     container: fedora:rawhide
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Setup pages
-        uses: actions/configure-pages@v6
       - name: Install gpg
         run: "dnf install -y gpg git rpm-sign"
       - name: "Import GPG key for signing commits"
@@ -64,10 +57,20 @@ jobs:
         run: |
           createrepo_c --update .
           gpg --detach-sign --armor repodata/repomd.xml
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: "."
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+      - name: Upload to Cloudflare R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.PACKAGE_R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.PACKAGE_R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+          AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET: "untitled-desktop-rpms"
+        run: |
+          dnf install -y awscli2
+          aws s3 sync . "s3://${R2_BUCKET}" \
+            --endpoint-url "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "my_key"
