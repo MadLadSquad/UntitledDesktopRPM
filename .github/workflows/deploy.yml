@@ -57,6 +57,8 @@ jobs:
         run: |
           createrepo_c --update .
           gpg --detach-sign --armor repodata/repomd.xml
+
+          rm *.sh README.md LICENSE .gitignore
       - name: Upload to Cloudflare R2
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.PACKAGE_R2_ACCESS_KEY_ID }}
